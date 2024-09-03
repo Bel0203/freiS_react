@@ -1,13 +1,21 @@
-.card{
+.card {
 
 
-  .conteudo{
-      background-color: white;
-      width: 215px;
-      height: 158px;
-      border-radius: 12px;
-      margin-top: 223px;
-      margin-left: 80px;
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 215px;
+    height: 120px;
+    border-radius: 12px;
+    margin-top: 30px;
+    padding: 10px 10px 30px 10px;
+    box-shadow: 0px 0px 5px rgb(219, 219, 219);
+
+    .titulo{
+      margin-top: 15px;
+    }
 
 
     .cores {
@@ -18,65 +26,65 @@
       .laranja {
         background-color: #ffce37;
       }
-      
+
       .verde {
         background-color: #b3ff37;
       }
-      
+
       .azul-ciano {
         background-color: #37fff3;
       }
-      
+
       .azul {
         background-color: #37b7ff;
       }
-      
+
       .rosa {
         background-color: #cb37ff;
       }
-      
+
       .vermelho {
         background-color: #ff5b37;
       }
-      
+
       .verde-ciano {
         background-color: #37ffab;
       }
-      
+
       .preto {
         background-color: #151515;
       }
-      
+
       .cinza {
         background-color: #d0d0d0;
       }
-      
+
       .marrom {
         background-color: #b75333;
       }
-      
+
       .roxo {
         background-color: #6533b7;
       }
-      
+
       .amarelo {
         background-color: #ffce37;
-    }
+      }
     }
 
-    .titulo{
+    .titulo {
       font-weight: 700;
       font-size: 14px;
       margin-bottom: 10px;
     }
 
-    .subtitulo{
+    .subtitulo {
       font-weight: 400;
       font-size: 14px;
     }
 
 
 
-    }
+  }
 
 }

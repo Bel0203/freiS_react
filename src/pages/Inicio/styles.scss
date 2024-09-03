@@ -8,8 +8,23 @@
         font-weight: 700;
     }
 
-    .texto{
+    .cards{
+        margin-left: 80px;
+        margin-right: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .link{
         text-decoration: none;
         color: black;
     }
+
+    .link:hover{
+        scale: 110%;
+        transition: 0.2s;
+     
+    }
+    
 }
