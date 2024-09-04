@@ -18,13 +18,16 @@
 
     .link{
         text-decoration: none;
-        color: black;
+        color:#383131;
     }
 
     .link:hover{
         scale: 110%;
         transition: 0.2s;
-     
+        cursor: pointer;
+        transition: all 0.43s;
     }
+
+
     
 }
