@@ -35,7 +35,7 @@ export default function ExercicioCinco(){
             <Balao descricao = "Implemente um programa em Javascript para verificar se um aluno passou ou não, baseado em 3 notas, considerando que a média mínima para passar é 6."/>
 
             <div className="main-content">
-                <div className="box-cupom">
+                <div className="box">
                     <div className="input-group">
                         <label htmlFor="nota1">Nota 01</label>
                         <input

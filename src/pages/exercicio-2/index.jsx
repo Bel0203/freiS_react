@@ -25,7 +25,7 @@ export default function ExercicioDois(){
         
 
             <div className="main-content">
-                <div className="box-cupom">
+                <div className="box">
                     <div className="input-group">
                         <label htmlFor="valor-gramas">Valor em kilos</label>
                         <input

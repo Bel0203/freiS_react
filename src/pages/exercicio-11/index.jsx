@@ -30,7 +30,7 @@ export default function ExerccicioOnze(){
             <Balao descricao = "Implemente um programa em Javascript que escreva a tabuada de um número informado pelo usuário. A mensagem deve estar no formato ”A x B = X”."/>
 
             <div className="main-content">
-                <div className="box-cupom">
+                <div className="box">
                     <div className="input-group">
                         <label htmlFor="Tabuada do:">Tabuada do:</label>
                         <input

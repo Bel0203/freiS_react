@@ -28,7 +28,7 @@ export default function ExercicioQuatro(){
             <Balao descricao = "Implementar um programa em Javascript que calcule o tempo que um livro será lido por uma pessoa a partir do nome do livro, do total de páginas e do tempo em segundos de leitura por página"/>
 
             <div className="main-content">
-                <div className="box-cupom">
+                <div className="box">
 
                     <div className=" input-group">
                         <label htmlFor="Nome do livro"> Nome do livro</label>

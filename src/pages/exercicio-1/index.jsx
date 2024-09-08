@@ -27,7 +27,7 @@ export default function ExercicioUm(){
 
          
             <div className="main-content">
-                <div className="box-cupom">
+                <div className="box">
                  <div className="input-group">
                      <label htmlFor="valor-pedido">Informe o valor do pedido</label>
                         <input
