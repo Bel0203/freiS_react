@@ -6,39 +6,53 @@ import { useState } from "react"
 
 export default function ExercicioDez(){
 
-    const[novalinha, setNovalinha]= useState('');
-    const[listalinhas,setListalinhas]= useState([]);
-    const[editando, setEditando]= useState(-1);
+    const [peso, setPeso] = useState(0);
+    const [altura, setAltura] = useState(0);
+    const [informacoes, setInformacoes] = useState([]);
+    const [editando, setEditando] = useState(-1);
 
-    function AdicionarLinha(){
+    function adicionar() {
+        let imc = Number(peso) / (Number(altura) * Number(altura));
 
-        if(novalinha != ''){
+        if (peso != 0 && altura != 0) {
 
-            if(editando == -1){
-            setListalinhas([...listalinhas,novalinha]);
-            setNovalinha('');
+            if (editando == -1) {
+                if (imc <= 18.4) {
+                    setInformacoes([...informacoes, `Altura: ${altura} | Peso: ${peso} | Situação: Abaixo do Peso`])
+                    setAltura(0);
+                    setPeso(0);
+                }
+                else if (imc >= 18.5 && imc <= 29.9) {
+                    setInformacoes([...informacoes,` Altura: ${altura} | Peso: ${peso} | Situação: Peso Normal`])
+                    setAltura(0);
+                    setPeso(0);
+                }
+                else {
+                    setInformacoes([...informacoes,`Altura: ${altura} | Peso: ${peso} | Situação: Acima do Peso`])
+                    setAltura(0);
+                    setPeso(0);
+                }
             }
-            else{
-                listalinhas[editando]= novalinha;
-                setListalinhas([...listalinhas]);
+            else {
+
             }
         }
     }
-
-    function teclaApertada(e){
-        if(e.key == 'Enter'){
-            AdicionarLinha();
+    
+    function removerImc(pos) {
+        informacoes.splice(pos, 1);
+        setInformacoes([...informacoes])
+    }
+    
+    function alterarImc (pos) {
+        setAltura(informacoes[pos])
+        setPeso(informacoes[pos])
+    }
+    
+    function enter(e) {
+        if (e.key == 'Enter') {
+            adicionar()
         }
-    }
-
-    function RemoverLinha(pos){
-        listalinhas.splice(pos,1);
-        setListalinhas([...listalinhas]);
-    }
-
-    function AlterarLinha(pos){
-        setNovalinha(listalinhas[pos]);
-        setEditando(pos);
     }
 
     return(
@@ -59,24 +73,40 @@ export default function ExercicioDez(){
                         <input
                             placeholder="0"
                             id="altura"
-                            onKeyUp={teclaApertada} value={novalinha}
-                            onChange={(e) =>setNovalinha (e.target.value)}
+                            value={altura}
+                            onKeyUp={enter}
+                            onChange={(e) =>setAltura (e.target.value)}
                             type="text"
+
                         />
                         <label htmlFor="">Peso</label>
                         <input
                             placeholder="0"
-                            id="Peso"
-                            onKeyUp={teclaApertada} value={novalinha}
-                            onChange={(e) =>setNovalinha (e.target.value)}
+                            id="peso"
+                            value={peso}
+                            onKeyUp={enter}
+                            onChange={(e) =>setPeso (e.target.value)}
                             type="text"
+
                         />
 
                     </div>
-                    <button onClick={AdicionarLinha}>Adicionar</button>
+                    <button onClick={adicionar}>Adicionar</button>
                 </div>
             </div>
-        
+            <div className='resposta'>
+                    <ul>
+                        {informacoes.map((item, pos) =>
+                            <div className='res'>
+                                <li key={pos}>
+                                    {item}
+                                </li>
+                                <img src="./remover.png" alt="" onClick={() => removerImc(pos)} />
+                                <img src="./edit.png" alt="" onClick={() => alterarImc(pos)}/>
+                            </div>
+                        )}
+                    </ul>
+            </div>
         
         
         
